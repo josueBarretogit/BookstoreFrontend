@@ -6,4 +6,5 @@
 
 <h1>ABOUT ME</h1>
 
-<h2>{data.hola}</h2>
+<h2>Data received : {data.title}</h2>
+<h2>{data.content}</h2>

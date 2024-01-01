@@ -1,10 +1,11 @@
 import { error } from "@sveltejs/kit";
-/** @type {import('./$types').PageLoad} */ export function load({ params }) {
-  if (params.slug === "hello-world") {
-    return {
-      title: "Hello world!",
-      content: "Welcome to our blog. Lorem ipsum dolor sit amet...",
-    };
-  }
-  error(404, "Not found");
-}
+import type { PageLoad } from "./$types";
+
+export const prerender = true;
+
+export const load: PageLoad = ({ params }) => {
+  return {
+    title: params.slug,
+    content: "some content",
+  };
+};
