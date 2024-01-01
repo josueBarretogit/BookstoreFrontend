@@ -1,9 +1,9 @@
 import { error } from "@sveltejs/kit";
-import type { PageLoad } from "./$types";
+import type { PageServerLoad } from "./$types";
 
 export const prerender = true;
 
-export const load: PageLoad = ({ params }) => {
+export const load: PageServerLoad = ({ params }) => {
   return {
     title: params.slug,
     content: "some content",
